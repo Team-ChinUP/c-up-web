@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${pretendardLight.variable} ${pretendardSemiBold.variable} h-full antialiased`}
     >
-      <body className="bg-background min-h-full flex flex-col font-pretendard-light">
+      <body className="bg-background min-h-full flex flex-col font-pretendard-light select-none">
         <header>
           <Header />
         </header>
