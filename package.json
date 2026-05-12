@@ -9,9 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.3",
+    "next": "^16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tailwindcss-preset-px-to-rem": "^1.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
