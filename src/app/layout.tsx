@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/header";
 
 const pretendardLight = localFont({
   src: "../../public/fonts/pretendard/Pretendard-Light.woff2",
@@ -31,7 +32,14 @@ export default function RootLayout({
       lang="en"
       className={`${pretendardLight.variable} ${pretendardSemiBold.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-pretendard-light">{children}</body>
+      <body className="bg-background min-h-full flex flex-col font-pretendard-light">
+        <header>
+          <Header />
+        </header>
+        <main className="flex flex-col px-160 pt-32">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

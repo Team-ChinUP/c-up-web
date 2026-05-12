@@ -13,6 +13,12 @@ const borderGradientPlugin = plugin(({ addUtilities, theme }) => {
       backgroundOrigin: "border-box",
       backgroundClip: "padding-box, border-box",
     },
+    ".border-b-gradient-surface": {
+      borderBottom: "1px solid transparent",
+      borderImageSource: `linear-gradient(to right, ${theme("colors.border-first")} 0%, ${theme("colors.border-last")} 100%)`,
+      borderImageSlice: "0 0 1 0",
+      borderImageRepeat: "stretch",
+    },
   });
 });
 
