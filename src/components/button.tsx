@@ -1,3 +1,4 @@
+"use client"
 
 type ButtonProps = Omit<
   React.DetailedHTMLProps<
