@@ -19,6 +19,15 @@ const borderGradientPlugin = plugin(({ addUtilities, theme }) => {
       borderImageSlice: "0 0 1 0",
       borderImageRepeat: "stretch",
     },
+    ".hr-gradient-surface": {
+      display: "block",
+      width: "100%",
+      height: "0",
+      borderTop: "0.5px solid transparent",
+      borderImageSource: `linear-gradient(to right, ${theme("colors.border-first")} 0%, ${theme("colors.border-last")} 100%)`,
+      borderImageSlice: "1",
+      borderImageRepeat: "stretch",
+    },
   });
 });
 
