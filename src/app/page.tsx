@@ -1,5 +1,5 @@
-import LinkButton from "@/components/link-button";
-import MotionBox from "@/components/motion-box";
+import LinkButton from "@/components/global/link-button";
+import MotionBox from "@/components/global/motion-box";
 
 export default function Home() {
   return (
