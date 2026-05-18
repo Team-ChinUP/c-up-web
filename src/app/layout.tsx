@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@/components/global/header";
+import Scrollbar from "@/components/global/scrollbar/scrollbar";
 
 const pretendardLight = localFont({
   src: "../../public/fonts/pretendard/Pretendard-Light.woff2",
@@ -14,7 +15,6 @@ const pretendardSemiBold = localFont({
   variable: "--font-pretendard-semibold",
   display: "swap",
 });
-
 
 export const metadata: Metadata = {
   title: "C:UP",
@@ -32,12 +32,10 @@ export default function RootLayout({
       lang="en"
       className={`${pretendardLight.variable} ${pretendardSemiBold.variable} h-full antialiased`}
     >
-      <body className="bg-background min-h-full flex flex-col font-pretendard-light select-none">
-        <header>
-          <Header />
-        </header>
-        <main className="flex flex-col px-160 pt-32">
-          {children}
+      <body className="bg-background h-full overflow-hidden flex flex-col font-pretendard-light select-none">
+        <Header />
+        <main className="flex-1 min-h-0">
+          <Scrollbar className="h-full px-160 pt-32 pb-32">{children}</Scrollbar>
         </main>
       </body>
     </html>
