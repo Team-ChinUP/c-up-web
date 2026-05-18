@@ -1,3 +1,5 @@
+"use server"
+
 export default async function SignInAction(
   prevState: unknown,
   formData: FormData,

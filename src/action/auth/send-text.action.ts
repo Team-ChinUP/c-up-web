@@ -1,3 +1,5 @@
+"use server";
+
 export default async function SendTextAction(
   prevState: unknown,
   formData: FormData,
