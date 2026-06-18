@@ -5,28 +5,32 @@ import Button from "@/components/global/button";
 import { useActionState, useEffect } from "react";
 import SignUpAction from "@/action/auth/sign-up.action";
 import { useRouter } from "next/navigation";
+import { showError, showSuccess } from "@/utils/toast";
 
 export default function SignUpForm() {
-  const router = useRouter()
+  const router = useRouter();
   const [state, action, isPending] = useActionState(SignUpAction, null);
 
   useEffect(() => {
     if (state) {
-      if(state.state){
-        router.push("sign-in")
+      if (state.state) {
+        showSuccess(state.message);
+        router.push("sign-in");
+      } else {
+        showError(state.message);
       }
     }
-  }, [state]);
+  }, [router, state]);
 
   return (
     <form action={action} className="flex flex-col gap-32">
       <div className="flex flex-col gap-24">
         <Input
-          label="아이디"
-          name="userId"
-          placeholder="아이디를 입력해주세요."
+          label="이메일"
+          name="email"
+          placeholder="이메일을 입력해주세요."
         />
-        <Input label="이름" name="userId" placeholder="이름을 입력해주세요." />
+        <Input label="이름" name="name" placeholder="이름을 입력해주세요." />
         <Input
           label="성별"
           name="gender"
@@ -35,11 +39,13 @@ export default function SignUpForm() {
         <Input
           label="비밀번호"
           name="password"
+          type="password"
           placeholder="비밀번호를 입력해주세요."
         />
         <Input
           label="비밀번호 확인"
-          name="password-check"
+          name="passwordConfirm"
+          type="password"
           placeholder="비밀번호를 한번 더 입력해주세요."
         />
       </div>
