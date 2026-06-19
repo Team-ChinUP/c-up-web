@@ -1,11 +1,19 @@
-import LinkButton from "@/components/global/link-button";
 import MotionBox from "@/components/global/motion-box";
+import EnterRoomForm from "@/components/room/enter-room-form";
 
-export default function Home() {
+type StartPageProps = {
+  searchParams?: Promise<{
+    error?: string;
+  }>;
+};
+
+export default async function Home({ searchParams }: StartPageProps) {
+  const params = await searchParams;
+
   return (
     <div className="flex flex-col gap-32 items-center">
-      <MotionBox/>
-      <LinkButton href={"/main"}>대화하기</LinkButton>
+      <MotionBox />
+      <EnterRoomForm errorMessage={params?.error} />
     </div>
   );
 }
