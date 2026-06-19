@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/global/header";
+import Providers from "@/app/providers";
 import Scrollbar from "@/components/global/scrollbar/scrollbar";
 
 const pretendardLight = localFont({
@@ -33,10 +34,12 @@ export default function RootLayout({
       className={`${pretendardLight.variable} ${pretendardSemiBold.variable} h-full antialiased`}
     >
       <body className="bg-background h-full overflow-hidden flex flex-col font-pretendard-light select-none">
-        <Header />
-        <main className="flex-1 min-h-0">
-          <Scrollbar className="h-full px-160 pt-32 pb-32">{children}</Scrollbar>
-        </main>
+        <Providers>
+          <Header />
+          <main className="flex-1 min-h-0">
+            <Scrollbar className="h-full px-160 pt-32 pb-32">{children}</Scrollbar>
+          </main>
+        </Providers>
       </body>
     </html>
   );
