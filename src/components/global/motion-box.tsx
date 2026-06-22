@@ -94,7 +94,6 @@ type MotionBoxProps = {
   audioVolume?: number;
   onMicClick?: () => void;
   onAudioVolumeChange?: (volume: number) => void;
-  onVoiceSendClick?: () => void;
   onTextSend?: (text: string) => void;
 };
 
@@ -280,7 +279,6 @@ export default function MotionBox({
   audioVolume = 0.5,
   onMicClick,
   onAudioVolumeChange,
-  onVoiceSendClick,
   onTextSend,
 }: MotionBoxProps) {
   const [text] = useState(
@@ -451,16 +449,6 @@ export default function MotionBox({
                     <span className="sr-only">녹음 중</span>
                   )}
                 </button>
-                {isRecording && (
-                  <button
-                    type="button"
-                    aria-label="음성 전송"
-                    onClick={onVoiceSendClick}
-                    className="border-gradient-surface p-18 rounded-36 cursor-pointer"
-                  >
-                    <Icon width={24} height={24} name="send" alt="send" />
-                  </button>
-                )}
               </div>
             ) : (
               <form className="flex flex-row gap-8" onSubmit={handleTextSubmit}>

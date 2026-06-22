@@ -40,7 +40,7 @@ type VoiceChatRoomProps = {
 };
 
 const SILENCE_THRESHOLD = 0.025;
-const SILENCE_END_MS = 5000;
+const SILENCE_END_MS = 3000;
 const CHUNK_INTERVAL_MS = 1000;
 const RECORDER_RESTART_DELAY_MS = 20;
 const TEXT_REVEAL_CHARS_PER_SECOND = 18;
@@ -942,10 +942,6 @@ export default function VoiceChatRoom({
     void startRecording();
   }, [isRecording, startRecording, turnOffMicrophone]);
 
-  const handleVoiceSendClick = useCallback(() => {
-    finishCurrentUtterance(true);
-  }, [finishCurrentUtterance]);
-
   const handleTextSend = useCallback(
     (text: string) => {
       const trimmedText = text.trim();
@@ -1105,7 +1101,6 @@ export default function VoiceChatRoom({
       audioVolume={audioVolume}
       onMicClick={handleMicClick}
       onAudioVolumeChange={handleAudioVolumeChange}
-      onVoiceSendClick={handleVoiceSendClick}
       onTextSend={handleTextSend}
     />
   );
