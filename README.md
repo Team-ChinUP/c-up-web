@@ -7,9 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="./c-up-web/src/assets/c-up-logo.png" alt="C-UP Logo" width="180" />
-  <br />
-  <img src="./c-up-web/src/assets/assistant-video-call-zero/default-standing/default_standing_01.png" alt="C-UP Character" width="220" />
+  <img src="./docs/assets/readme/c-up-service-preview.png" alt="C-UP Service Preview" width="900" />
 </p>
 
 ## 개요
